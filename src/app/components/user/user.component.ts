@@ -8,7 +8,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
-  UserList: any = [];
+  userList: any = [];
 
   constructor(private userService: UserService) { }
   
@@ -19,7 +19,7 @@ export class UserComponent implements OnInit {
 
   getAllUsers() {
        this.userService.getAllUsersData().subscribe((data: {}) => {
-         this.UserList = data;
+         this.userList = data;
         });
       }
     

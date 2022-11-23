@@ -65,6 +65,35 @@
 <!-- End About Section-->
 
 <section>aqui va la tabla</section>
+<section class="section">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="card">
+                  <div class="card-body">
+                     <h5 class="card-title">Usuarios registrados</h5>
+                     <table class="table datatable">
+                        <thead>
+                           <tr>
+                              <th scope="col">#</th>
+                              <th scope="col">Nombre</th>
+                              <th scope="col">apellido</th>                          
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <tr *ngFor="let item of userList;">
+                              <th scope="row">1</th>
+                              <td>{{item.nombre}}</td>
+                              <td>{{item.apellido}}</td>                           
+                           </tr> 
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+  
+  
 
 <button class="btn btn-primary" id="scrollTopBtn" type="button">
   <i class="fas fa-angle-up text-white"></i>
