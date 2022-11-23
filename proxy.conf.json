@@ -1,6 +1,12 @@
 {
-  "/api/animals": {
-    "target": "http://localhost:3000",
+  "/api/usuario": {
+    "target": "http://localhost:9000",
+    "secure": false,
+    "changeOrigin": false
+  },
+
+  "/api/actividad": {
+    "target": "http://localhost:9000",
     "secure": false,
     "changeOrigin": false
   }

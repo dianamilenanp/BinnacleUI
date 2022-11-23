@@ -6,6 +6,10 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './components/user/user.component';
 import { TaskComponent } from './components/task/task.component';
 import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,12 @@ import { LoginComponent } from './components/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    CommonModule,
+    ReactiveFormsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
