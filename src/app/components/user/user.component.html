@@ -140,7 +140,7 @@
                 <th scope="col">Teléfono Contacto</th>
                 <th scope="col">Grado Contacto</th>
                 <th scope="col">Observaciones</th>
-                <th scope="col">Contraseña</th>             
+                <th scope="col">Contraseña</th>
               </tr>
             </thead>
             <tbody>
@@ -158,6 +158,22 @@
                 <td>{{item.grado_contacto}}</td>
                 <td>{{item.observaciones}}</td>
                 <td>{{item.contrasena}}</td>
+                <td>
+                  <div class="example-button-container">
+                    <button mat-icon-button color="accent" aria-label="Actualizar Actividad"
+                      (click)="toggleEditUser(item._id)">
+                      Editar
+                    </button>
+                  </div>
+                </td>
+                <td>
+                  <div class="example-button-container">
+                    <button mat-icon-button color="accent" aria-label="Eliminar actividad"
+                      (click)="deleteUserEntry(item._id)">
+                      Eliminar
+                    </button>
+                  </div>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -166,7 +182,77 @@
     </div>
   </div>
 </section>
-
+<div *ngIf="editableUser">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Registrar Usuario</h5>
+        <form (ngSubmit)="updateUserEntry()" [formGroup]="userForm">
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Nombre:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="nombre"></div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Apellido:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="apellido">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Curso:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="curso">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Rol:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="rol">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Correo Usuario:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="correo_usuario">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Teléfono Usuario:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="telefono_usuario">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Grado Usuario:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="grado_usuario">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Correo Contacto:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="correo_contacto">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Teléfono Contacto:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="telefono_contacto">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Grado Contacto:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="grado_contacto">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Observaciones:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="observaciones">
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="inputText" class="col-sm-2 col-form-label">Contraseña:</label>
+            <div class="col-sm-10"> <input type="text" class="form-control" formControlName="contrasena">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Guardar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 <button class="btn btn-primary" id="scrollTopBtn" type="button">

@@ -54,28 +54,28 @@ export class UserComponent implements OnInit {
       }
     );
   }
-/*
+
   deleteUserEntry(id: any) {
     console.log(id)
     this.userService.deleteUser(id).subscribe(
       () => {
         //Enviando mensaje de confirmación
-        this.openMessage("Actividad eliminada", "Actualizar lista");
+        /*this.openMessage("Actividad eliminada", "Actualizar lista");*/
       }
     );
   }
 
   updateUserEntry() {
     //Removiendo valores vacios del formulario de actualización
-    /*for (let key in this.userForm.value) {
-      if (this.userForm.value[key] === '') {
+    for (let key in this.userForm.value) {
+      /*if (this.userForm.value[key] === '') {
         this.userForm.removeControl(key);
-      }
+      }*/
     }
     this.userService.updateUser(this.idUser, this.userForm.value).subscribe(
       () => {
         //Enviando mensaje de confirmación
-        this.openMessage("Animal editado", "Actualizar lista");
+        /*this.openMessage("Animal editado", "Actualizar lista");*/
       }
     );
   }
@@ -84,6 +84,6 @@ export class UserComponent implements OnInit {
     this.idUser = id;
     console.log(this.idUser)
     this.editableUser = !this.editableUser;
-  }*/
+  }
 
 }
