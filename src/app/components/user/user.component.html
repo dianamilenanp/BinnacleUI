@@ -1,23 +1,12 @@
 <!-- Navbar-->
-<nav
-  class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-lg-0"
-  id="navbar"
->
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top py-lg-0" id="navbar">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="assets/img/logo.png" alt="Italiano" width="100"
-    /></a>
-    <button
-      class="navbar-toggler p-0 shadow-0 border-0 text-black"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="fw-bold mb-0 text-uppercase">Menu</span
-      ><span class="navbar-toggler-icon ms-2"></span>
+      <img src="assets/img/logo.png" alt="Italiano" width="100" /></a>
+    <button class="navbar-toggler p-0 shadow-0 border-0 text-black" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="fw-bold mb-0 text-uppercase">Menu</span><span class="navbar-toggler-icon ms-2"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -32,10 +21,7 @@
             <a class="nav-link" href="#contact">Tareas</a>
           </li>
           <li class="nav-item ms-lg-3">
-            <button
-              class="btn btn-primary d-none d-lg-inline-block"
-              type="button"
-            >
+            <button class="btn btn-primary d-none d-lg-inline-block" type="button">
               Salir
             </button>
           </li>
@@ -61,39 +47,101 @@
       <h2 class="handwriting-text">Usuarios</h2>
     </header>
   </div>
-</section>
+
 <!-- End About Section-->
 
-<section>aqui va la tabla</section>
-<section class="section">
-         <div class="row">
-            <div class="col-lg-12">
-               <div class="card">
-                  <div class="card-body">
-                     <h5 class="card-title">Usuarios registrados</h5>
-                     <table class="table datatable">
-                        <thead>
-                           <tr>
-                              <th scope="col">#</th>
-                              <th scope="col">Nombre</th>
-                              <th scope="col">apellido</th>                          
-                           </tr>
-                        </thead>
-                        <tbody>
-                           <tr *ngFor="let item of userList;">
-                              <th scope="row">1</th>
-                              <td>{{item.nombre}}</td>
-                              <td>{{item.apellido}}</td>                           
-                           </tr> 
-                        </tbody>
-                     </table>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
-  
-  
+    <div class="row">
+
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Registrar Usuario</h5>
+            <form (ngSubmit)="newUserEntry()" [formGroup]="userForm">
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Nombre</label>
+                <div class="col-sm-10"> <input type="text" class="form-control" formControlName="nombre"></div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Apellido</label>
+                <div class="col-sm-10"> <input type="text" class="form-control" formControlName="apellido"></div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Curso</label>
+                <div class="col-sm-10"> <input type="text" class="form-control" formControlName="curso"></div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Rol</label>
+                <div class="col-sm-10"> <input type="text" class="form-control" formControlName="rol"></div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Correo</label>
+                <div class="col-sm-10"> <input type="text" class="form-control" formControlName="correo_usuario"></div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Telefono</label>
+                <div class="col-sm-10"> <input type="text" class="form-control" formControlName="telefono_usuario"></div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Grado</label>
+                <div class="col-sm-10"> <input type="text" class="form-control" formControlName="grado_usuario"></div>
+              </div>
+              <div class="row mb-3">
+                <label for="inputText" class="col-sm-2 col-form-label">Correo del contacto</label>
+                <div class="col-sm-10"> <input type="text" class="form-control" formControlName="correo_contacto"></div>
+              </div> 
+                <div class="row mb-3">
+                  <label for="inputText" class="col-sm-2 col-form-label">Telefono del contacto</label>
+                  <div class="col-sm-10"> <input type="text" class="form-control" formControlName="telefono_contacto"></div>
+                </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">grado del contacto</label>
+                    <div class="col-sm-10"> <input type="text" class="form-control" formControlName="grado_contacto"></div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Observaciones</label>
+                    <div class="col-sm-10"> <input type="text" class="form-control" formControlName="observaciones"></div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Contraseña</label>
+                    <div class="col-sm-10"> <input type="text" class="form-control" formControlName="contraseña"></div>
+                  </div>
+              <button type="submit" class="btn btn-primary">Guardar</button>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Usuarios registrados</h5>
+            <table class="table datatable">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">apellido</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of userList;">
+                  <th scope="row">1</th>
+                  <td>{{item.nombre}}</td>
+                  <td>{{item.apellido}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
 
 <button class="btn btn-primary" id="scrollTopBtn" type="button">
   <i class="fas fa-angle-up text-white"></i>
@@ -103,12 +151,7 @@
   <div class="container">
     <div class="row gy-4 mb-5">
       <div class="col-md-4">
-        <img
-          class="mb-4"
-          src="assets/img/logo-footer.f2ebd21b.png"
-          alt="italiano"
-          width="100"
-        />
+        <img class="mb-4" src="assets/img/logo-footer.f2ebd21b.png" alt="italiano" width="100" />
         <p class="text-sm">
           Binnacle una plataforma para la creación y manejo de actividades..
         </p>
@@ -121,10 +164,8 @@
             Colombia
           </li>
           <li class="mb-2">
-            <a class="text-reset" href="mailto:youremail@Company.com"
-              ><i class="fas fa-envelope text-primary me-2 fa-fw"></i
-              >binnacle@gmail.com</a
-            >
+            <a class="text-reset" href="mailto:youremail@Company.com"><i
+                class="fas fa-envelope text-primary me-2 fa-fw"></i>binnacle@gmail.com</a>
           </li>
           <li class="mb-2">
             <i class="fas fa-phone text-primary me-2 fa-fw"></i>**** **** ***
@@ -135,29 +176,19 @@
     </div>
     <ul class="social list-inline text-center mb-0 text-white">
       <li class="list-inline-item mx-2">
-        <a class="text-reset" href="#!" target="_blank" title="Facebook"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
+        <a class="text-reset" href="#!" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
       </li>
       <li class="list-inline-item mx-2">
-        <a class="text-reset" href="#!" target="_blank" title="Twitter"
-          ><i class="fab fa-twitter"></i
-        ></a>
+        <a class="text-reset" href="#!" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
       </li>
       <li class="list-inline-item mx-2">
-        <a class="text-reset" href="#!" target="_blank" title="Instagram"
-          ><i class="fab fa-instagram"></i
-        ></a>
+        <a class="text-reset" href="#!" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
       </li>
       <li class="list-inline-item mx-2">
-        <a class="text-reset" href="#!" target="_blank" title="Pinterest"
-          ><i class="fab fa-pinterest"></i
-        ></a>
+        <a class="text-reset" href="#!" target="_blank" title="Pinterest"><i class="fab fa-pinterest"></i></a>
       </li>
       <li class="list-inline-item mx-2">
-        <a class="text-reset" href="#!" target="_blank" title="Skype"
-          ><i class="fab fa-skype"></i
-        ></a>
+        <a class="text-reset" href="#!" target="_blank" title="Skype"><i class="fab fa-skype"></i></a>
       </li>
     </ul>
   </div>
@@ -181,9 +212,7 @@
       <div class="col-md-7 text-lg-end">
         <p class="mb-0 small">
           © 2022, Designed by
-          <a href="#" target="_blank"
-            >Camilo Mora, Dario Carrillo, Diana Niño</a
-          >
+          <a href="#" target="_blank">Camilo Mora, Dario Carrillo, Diana Niño</a>
         </p>
       </div>
     </div>
