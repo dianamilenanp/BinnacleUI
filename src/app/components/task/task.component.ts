@@ -21,7 +21,7 @@ export class TaskComponent implements OnInit {
     estado_avance: '',
     prioridad: ''
   })
-  
+
   editableTask: boolean = false;
   idTask: any;
 
@@ -51,16 +51,16 @@ export class TaskComponent implements OnInit {
     );
   }
 
-/*  deleteTaskEntry(id: any) {
+  deleteTaskEntry(id: any) {
     console.log(id)
     this.taskService.deleteTask(id).subscribe(
       () => {
         //Enviando mensaje de confirmación
-        this.openMessage("Actividad eliminada", "Actualizar lista");
+        /*this.openMessage("Actividad eliminada", "Actualizar lista");*/
       }
     );
   }
-*/
+
   updateTaskEntry() {
     //Removiendo valores vacios del formulario de actualización
     /*for (let key in this.taskForm.value) {
