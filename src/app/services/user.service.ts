@@ -22,5 +22,20 @@ export class UserService {
              data,
              {headers: this.httpOptions});
         }
-        
+  
+   deleteUser(id: any) {
+           return this.http.delete<any>(
+              this.apiUri + "/" + id,
+             { headers: this.httpOptions });
+           }
+  
+           
+   updateAnimal(id: any, data: any): Observable<any> {
+            console.log(data)
+            return this.http.put<any>(
+             this.apiUri + '/' + id,
+             data,
+             {headers: this.httpOptions});
+             }
+            
 }

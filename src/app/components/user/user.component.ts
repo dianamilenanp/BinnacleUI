@@ -11,7 +11,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserComponent implements OnInit {
   userList: any = [];
-  displayedColums: string[] = ['nombre', 'apellido','curso','rol','correo_usuario','telefono_usuario','grado_usuario','correo_contacto','telefono_contacto','grado_contacto','observaciones','contraseña', 'modificar'];
+  displayedColums: string[] = ['nombre', 'apellido', 'modificar', 'Eliminar'];
   userForm = this.formBuilder.group({
          nombre: '',
          apellido: '',
@@ -56,16 +56,16 @@ export class UserComponent implements OnInit {
             );
          }
         
-  /*deleteUserEntry(id: any) {
+  deleteUserEntry(id: any) {
            console.log(id)
            this.userService.deleteUser(id).subscribe(
            () => {
            //Enviando mensaje de confirmación
-           this.openMessage("Usuario eliminado", "Actualizar lista");
+           //this.openMessage("Usuario eliminado", "Actualizar lista");
            }
            );
            }
-   
+   /*
  updateUserEntry() {
              //Removiendo valores vacios del formulario de actualización
              for (let key in this.userForm.value) {
