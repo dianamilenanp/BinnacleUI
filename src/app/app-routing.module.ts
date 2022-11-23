@@ -5,6 +5,7 @@ import { UserComponent } from './components/user/user.component';
 import { TaskComponent } from './components/task/task.component';
 
 const routes: Routes = [
+  {path:'',component:LoginComponent},
   {path:'user',component:UserComponent},
   {path:'login',component:LoginComponent},
   {path:'task',component:TaskComponent}
