@@ -51,7 +51,7 @@ export class TaskComponent implements OnInit {
     );
   }
 
-  deleteTaskEntry(id: any) {
+/*  deleteTaskEntry(id: any) {
     console.log(id)
     this.taskService.deleteTask(id).subscribe(
       () => {
@@ -60,18 +60,18 @@ export class TaskComponent implements OnInit {
       }
     );
   }
-
+*/
   updateTaskEntry() {
     //Removiendo valores vacios del formulario de actualización
-    for (let key in this.taskForm.value) {
+    /*for (let key in this.taskForm.value) {
       if (this.taskForm.value[key] === '') {
         this.taskForm.removeControl(key);
       }
-    }
+    }*/
     this.taskService.updateTask(this.idTask, this.taskForm.value).subscribe(
       () => {
         //Enviando mensaje de confirmación
-        this.openMessage("Animal editado", "Actualizar lista");
+        //this.openMessage("Actividad editado", "Actualizar lista");
       }
     );
   }

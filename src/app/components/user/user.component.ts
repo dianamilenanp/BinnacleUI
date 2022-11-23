@@ -22,7 +22,7 @@ export class UserComponent implements OnInit {
     telefono_contacto: '',
     grado_contacto: '',
     observaciones: '',
-    contraseña: ''
+    contrasena: ''
   })
 
   editableUser: boolean = false;
@@ -54,7 +54,7 @@ export class UserComponent implements OnInit {
       }
     );
   }
-
+/*
   deleteUserEntry(id: any) {
     console.log(id)
     this.userService.deleteUser(id).subscribe(
@@ -67,7 +67,7 @@ export class UserComponent implements OnInit {
 
   updateUserEntry() {
     //Removiendo valores vacios del formulario de actualización
-    for (let key in this.userForm.value) {
+    /*for (let key in this.userForm.value) {
       if (this.userForm.value[key] === '') {
         this.userForm.removeControl(key);
       }
@@ -84,6 +84,6 @@ export class UserComponent implements OnInit {
     this.idUser = id;
     console.log(this.idUser)
     this.editableUser = !this.editableUser;
-  }
+  }*/
 
 }
